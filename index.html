@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<title>Этап 4 — Всё в одном</title>
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: black;
+        color: #d0d0d0;
+        font-family: monospace;
+        height: 100%;
+    }
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 50px;
+    }
+
+    h1 {
+        text-align: center;
+        letter-spacing: 3px;
+        margin-bottom: 40px;
+    }
+
+    .cipher {
+        margin-bottom: 20px;
+        white-space: pre-wrap;
+    }
+
+    .input-block {
+        margin-top: 40px;
+    }
+
+    input {
+        background: black;
+        border: 1px solid #444;
+        color: #fff;
+        padding: 8px;
+        width: 300px;
+        font-family: monospace;
+    }
+
+    button {
+        background: black;
+        color: #aaa;
+        border: 1px solid #444;
+        padding: 8px 12px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        color: white;
+        border-color: white;
+    }
+
+    .message {
+        margin-top: 15px;
+        color: #666;
+    }
+
+    .spacer {
+        height: 600px;
+    }
+
+    .scroll-text {
+        margin: 120px 0;
+        font-size: 14px;
+    }
+
+    .final {
+        margin-top: 200px;
+        border-top: 1px solid #333;
+        padding-top: 40px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>ЭТАП 4 — ВСЁ В ОДНОМ</h1>
+
+    <div class="cipher">[1] 01101000 11001001 01011100 01000111</div>
+    <div class="cipher">[2] ZW5vdWdo</div>
+    <div class="cipher">[3] VJKU YJ VJKU YJ</div>
+    <div class="cipher">[4] 8-23-1-20-9-20</div>
+    <div class="cipher">[5] ⌇⍜⋏⏁⟟⋏⎍⟒</div>
+    <div class="cipher">[6] ⠓⠁⠧⠑⠀⠽⠕⠥⠀⠞⠗⠊⠑⠙⠀⠞⠓⠊⠎⠦</div>
+
+    <div class="input-block">
+        <div>Введите ответ:</div>
+        <input id="fakeInput" type="text">
+        <button onclick="fakeCheck()">OK</button>
+        <div id="fakeMsg" class="message"></div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="scroll-text">Хочешь подсказку?</div>
+    <div class="scroll-text">Всё, что нужно, уже на экране.</div>
+    <div class="scroll-text">А ты всё ещё ищешь ответ.</div>
+    <div class="scroll-text">Так можно долго.</div>
+    <div class="scroll-text">И смысла в этом всё меньше.</div>
+    <div class="scroll-text">Тут нет решения.</div>
+
+    <div class="final">
+        <div>…</div>
+        <div style="margin-top:20px;">Ладно.</div>
+        <div>Ты всё-таки долистал.</div>
+
+        <div class="input-block">
+            <div>Введите ответ ещё раз:</div>
+            <input id="realInput" type="text">
+            <button onclick="realCheck()">OK</button>
+            <div id="realMsg" class="message"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+function fakeCheck() {
+    const msgs = [
+        "Ответ неверный.",
+        "Недостаточно данных.",
+        "Попробуй ещё.",
+        "Это не то.",
+        "Продолжай искать."
+    ];
+    document.getElementById("fakeMsg").innerText =
+        msgs[Math.floor(Math.random() * msgs.length)];
+}
+
+function realCheck() {
+    const val = document.getElementById("realInput").value.trim().toUpperCase();
+    if (val === "ХВАТИТ") {
+        document.body.innerHTML = `
+            <div style="color:white; font-family:monospace; text-align:center; margin-top:40vh;">
+                <div>Ты понял.</div>
+                <div style="margin-top:20px;">Иногда лучший ход — остановиться.</div>
+                <div style="margin-top:40px;">🎄 С Новым годом.</div>
+            </div>
+        `;
+    } else {
+        document.getElementById("realMsg").innerText = "";
+    }
+}
+</script>
+
+</body>
+</html>
