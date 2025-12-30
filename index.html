@@ -1,132 +1,134 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
 <title>Этап 4 — Всё в одном</title>
+
 <style>
-    html, body {
-        margin: 0;
-        padding: 0;
-        background: black;
-        color: #d0d0d0;
-        font-family: monospace;
-    }
+html, body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: #d0d0d0;
+    font-family: monospace;
+}
 
-    .container {
-        width: 80%;
-        margin: 0 auto;
-        padding-top: 50px;
-    }
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
 
-    h1 {
-        text-align: center;
-        letter-spacing: 3px;
-        margin-bottom: 40px;
-    }
+h1 {
+    text-align: center;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+}
 
-    .cipher {
-        margin-bottom: 20px;
-        white-space: pre-wrap;
-    }
+.cipher {
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+}
 
-    .input-block {
-        margin-top: 40px;
-    }
+.input-block {
+    margin-top: 40px;
+}
 
-    input {
-        background: black;
-        border: 1px solid #444;
-        color: #fff;
-        padding: 8px;
-        width: 300px;
-        font-family: monospace;
-    }
+input {
+    background: black;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 8px;
+    width: 300px;
+    font-family: monospace;
+}
 
-    button {
-        background: black;
-        color: #aaa;
-        border: 1px solid #444;
-        padding: 8px 12px;
-        margin-left: 10px;
-        cursor: pointer;
-    }
+button {
+    background: black;
+    color: #aaa;
+    border: 1px solid #444;
+    padding: 8px 12px;
+    margin-left: 10px;
+    cursor: pointer;
+}
 
-    button:hover {
-        color: white;
-        border-color: white;
-    }
+button:hover {
+    color: white;
+    border-color: white;
+}
 
-    .message {
-        margin-top: 15px;
-        color: #666;
-    }
+.message {
+    margin-top: 15px;
+    color: #666;
+}
 
-    /* ОГРОМНЫЕ ПРОМЕЖУТКИ */
-    .gap {
-        height: 220vh;
-    }
+.gap {
+    height: 220vh;
+}
 
-    .scroll-text {
-        margin: 0;
-        font-size: 14px;
-    }
+.scroll-text {
+    font-size: 14px;
+}
 
-    .final {
-        margin-top: 300vh;
-        border-top: 1px solid #333;
-        padding-top: 60px;
-    }
+.final {
+    margin-top: 300vh;
+    border-top: 1px solid #333;
+    padding-top: 60px;
+}
 </style>
 </head>
+
 <body>
 
 <div class="container">
-    <h1>ЭТАП 4 — ВСЁ В ОДНОМ</h1>
 
-    <div class="cipher">[1] 01101000 11001001 01011100 01000111</div>
-    <div class="cipher">[2] ZW5vdWdo</div>
-    <div class="cipher">[3] VJKU YJ VJKU YJ</div>
-    <div class="cipher">[4] 8-23-1-20-9-20</div>
-    <div class="cipher">[5] ⌇⍜⋏⏁⟟⋏⎍⟒</div>
-    <div class="cipher">[6] ⠓⠁⠧⠑⠀⠽⠕⠥⠀⠞⠗⠊⠑⠙⠀⠞⠓⠊⠎⠦</div>
+<h1>ЭТАП 4 — ВСЁ В ОДНОМ</h1>
+
+<div class="cipher">[1] 01101000 11001001 01011100 01000111</div>
+<div class="cipher">[2] ZW5vdWdo</div>
+<div class="cipher">[3] VJKU YJ VJKU YJ</div>
+<div class="cipher">[4] 8-23-1-20-9-20</div>
+<div class="cipher">[5] ⌇⍜⋏⏁⟟⋏⎍⟒</div>
+<div class="cipher">[6] ⠓⠁⠧⠑⠀⠽⠕⠥⠀⠞⠗⠊⠑⠙⠀⠞⠓⠊⠎⠦</div>
+
+<div class="input-block">
+    <div>Введите ответ:</div>
+    <input id="fakeInput" type="text">
+    <button onclick="fakeCheck()">OK</button>
+    <div id="fakeMsg" class="message"></div>
+</div>
+
+<div class="gap"></div>
+<div class="scroll-text">Хочешь подсказку?</div>
+
+<div class="gap"></div>
+<div class="scroll-text">Всё, что нужно, уже на экране.</div>
+
+<div class="gap"></div>
+<div class="scroll-text">А ты всё ещё ищешь ответ.</div>
+
+<div class="gap"></div>
+<div class="scroll-text">Так можно долго.</div>
+
+<div class="gap"></div>
+<div class="scroll-text">И смысла в этом всё меньше.</div>
+
+<div class="gap"></div>
+<div class="scroll-text">Тут нет решения.</div>
+
+<div class="final">
+    <div>…</div>
+    <div style="margin-top:20px;">Стоп.</div>
+    <div>Хватит крутить.</div>
 
     <div class="input-block">
-        <div>Введите ответ:</div>
-        <input id="fakeInput" type="text">
-        <button onclick="fakeCheck()">OK</button>
-        <div id="fakeMsg" class="message"></div>
+        <div>Введите ответ ещё раз:</div>
+        <input id="realInput" type="text">
+        <button onclick="realCheck()">OK</button>
+        <div id="realMsg" class="message"></div>
     </div>
+</div>
 
-    <div class="gap"></div>
-    <div class="scroll-text">Хочешь подсказку?</div>
-
-    <div class="gap"></div>
-    <div class="scroll-text">Всё, что нужно, уже на экране.</div>
-
-    <div class="gap"></div>
-    <div class="scroll-text">А ты всё ещё ищешь ответ.</div>
-
-    <div class="gap"></div>
-    <div class="scroll-text">Так можно долго.</div>
-
-    <div class="gap"></div>
-    <div class="scroll-text">И смысла в этом всё меньше.</div>
-
-    <div class="gap"></div>
-    <div class="scroll-text">Тут нет решения.</div>
-
-    <div class="final">
-        <div>…</div>
-        <div style="margin-top:20px;">Стоп.</div>
-        <div>Хватит крутить.</div>
-
-        <div class="input-block">
-            <div>Введите ответ ещё раз:</div>
-            <input id="realInput" type="text">
-            <button onclick="realCheck()">OK</button>
-            <div id="realMsg" class="message"></div>
-        </div>
-    </div>
 </div>
 
 <script>
@@ -143,21 +145,19 @@ function fakeCheck() {
 }
 
 function realCheck() {
-    const val = document.getElementById("realInput").value.trim().toUpperCase();
+    const val = document.getElementById("realInput").value
+        .trim()
+        .toUpperCase();
+
     if (val === "ХВАТИТ") {
         document.body.innerHTML = `
-            <div style="color:white; font-family:monospace; text-align:center; margin-top:40vh;">
-                <div>Ты остановился.</div>
-                <div style="margin-top:20px;">И это был правильный ход.</div>
-                <div style="margin-top:40px;">🎄 С Новым годом.</div>
-            </div>
-        `;
-    } else {
-        document.getElementById("realMsg").innerText = "";
-    }
-}
-</script>
-
-</body>
-</html>
-
+        <div style="
+            color:white;
+            font-family:monospace;
+            text-align:center;
+            margin-top:35vh;
+        ">
+            <div>Ты остановился.</div>
+            <div style="margin-top:20px;">
+                И это был правильный ход.
+            </d
