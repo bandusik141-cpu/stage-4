@@ -89,7 +89,7 @@ button:hover {
 }
 
 .gap {
-    height: 180vh;
+    height: 120vh;
 }
 
 .scroll-text {
@@ -98,7 +98,7 @@ button:hover {
 }
 
 .final {
-    margin-top: 300vh;
+    margin-top: 260vh;
     border-top: 1px solid #333;
     padding-top: 70px;
 }
@@ -109,13 +109,13 @@ button:hover {
 
 <!-- ❄️ СНЕЖИНКИ -->
 <script>
-for (let i = 0; i < 80; i++) {
+for (let i = 0; i < 90; i++) {
     const snow = document.createElement("div");
     snow.className = "snowflake";
     snow.textContent = "❄";
     snow.style.left = Math.random() * 100 + "vw";
-    snow.style.fontSize = (Math.random() * 10 + 10) + "px";
-    snow.style.animationDuration = (Math.random() * 10 + 10) + "s";
+    snow.style.fontSize = (Math.random() * 12 + 10) + "px";
+    snow.style.animationDuration = (Math.random() * 12 + 10) + "s";
     snow.style.opacity = Math.random();
     document.body.appendChild(snow);
 }
@@ -131,7 +131,32 @@ for (let i = 0; i < 80; i++) {
 <div class="cipher">[4] 8-23-1-20-9-20</div>
 <div class="cipher">[5] ⌇⍜⋏⏁⟟⋏⎍⟒</div>
 <div class="cipher">[6] ⠓⠁⠧⠑⠀⠽⠕⠥⠀⠞⠗⠊⠑⠙⠀⠞⠓⠊⠎⠦</div>
+    <div class="cipher">
+[?] 01001110 01101111 01110100 00100000 01100101 01101110 01101111 01110101 01100111 01101000
+</div>
 
+<div class="cipher">
+[?] NOT ENOUGH DATA
+</div>
+
+<div class="cipher">
+[?] Повторение не приводит к результату.
+</div>
+
+<div class="cipher">
+[?] Все шесть элементов не складываются в ответ.
+</div>
+
+<div class="cipher">
+[?] Возможно, порядок имеет значение.
+</div>
+
+<div class="cipher">
+[?] Возможно, нет.
+</div>
+
+
+<!-- ФЕЙКОВЫЙ ВВОД -->
 <div class="input-block">
     <div>Введите ответ:</div>
     <input id="fakeInput" type="text">
@@ -139,18 +164,26 @@ for (let i = 0; i < 80; i++) {
     <div id="fakeMsg" class="message"></div>
 </div>
 
+<!-- СКРОЛЛ-ТЕКСТ = Х В А Т И Т -->
 <div class="gap"></div>
-<div class="scroll-text">Здесь больше, чем кажется.</div>
+<div class="scroll-text">Хочешь подсказку?</div>
 
 <div class="gap"></div>
-<div class="scroll-text">Иногда поиск — это ловушка.</div>
+<div class="scroll-text">Всё, что нужно, уже на экране.</div>
 
 <div class="gap"></div>
-<div class="scroll-text">Ответ не всегда нужно находить.</div>
+<div class="scroll-text">А ты продолжаешь искать.</div>
 
 <div class="gap"></div>
-<div class="scroll-text">Иногда — его нужно прекратить.</div>
+<div class="scroll-text">Так можно очень долго.</div>
 
+<div class="gap"></div>
+<div class="scroll-text">И смысла становится меньше.</div>
+
+<div class="gap"></div>
+<div class="scroll-text">Тут нет решения.</div>
+
+<!-- НАСТОЯЩИЙ ФИНАЛ -->
 <div class="final">
     <div>…</div>
     <div style="margin-top:20px;">Стоп.</div>
