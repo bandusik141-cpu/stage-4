@@ -9,56 +9,72 @@ html, body {
     margin: 0;
     padding: 0;
     background: black;
-    color: #d0d0d0;
+    color: #e0e0e0;
     font-family: monospace;
-    font-size: 18px; /* 🔥 базовый размер */
+    overflow-x: hidden;
+}
+
+/* ❄️ СНЕЖИНКИ */
+.snowflake {
+    position: fixed;
+    top: -10px;
+    color: white;
+    user-select: none;
+    pointer-events: none;
+    z-index: 0;
+    animation-name: fall;
+    animation-timing-function: linear;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
 }
 
 .container {
     width: 80%;
     margin: 0 auto;
     padding-top: 60px;
+    position: relative;
+    z-index: 1;
 }
 
 h1 {
     text-align: center;
     letter-spacing: 4px;
     margin-bottom: 50px;
-    font-size: 32px;
+    font-size: 26px;
 }
 
 .cipher {
     margin-bottom: 26px;
     white-space: pre-wrap;
-    font-size: 22px; /* 🔥 шифры */
+    font-size: 20px;
 }
 
 .input-block {
     margin-top: 50px;
 }
 
-.input-block > div {
-    font-size: 20px;
-}
-
 input {
     background: black;
     border: 1px solid #555;
     color: #fff;
-    padding: 12px;
-    width: 340px;
+    padding: 10px;
+    width: 320px;
     font-family: monospace;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 button {
     background: black;
     color: #aaa;
     border: 1px solid #555;
-    padding: 12px 18px;
-    margin-left: 12px;
+    padding: 10px 14px;
+    margin-left: 10px;
     cursor: pointer;
-    font-size: 18px;
+    font-family: monospace;
 }
 
 button:hover {
@@ -67,33 +83,43 @@ button:hover {
 }
 
 .message {
-    margin-top: 18px;
+    margin-top: 16px;
     color: #777;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .gap {
-    height: 220vh;
+    height: 180vh;
 }
 
 .scroll-text {
-    font-size: 22px; /* 🔥 текст при прокрутке */
-    opacity: 0.9;
+    font-size: 16px;
+    opacity: 0.75;
 }
 
 .final {
     margin-top: 300vh;
     border-top: 1px solid #333;
-    padding-top: 80px;
-}
-
-.final div {
-    font-size: 22px;
+    padding-top: 70px;
 }
 </style>
 </head>
 
 <body>
+
+<!-- ❄️ СНЕЖИНКИ -->
+<script>
+for (let i = 0; i < 80; i++) {
+    const snow = document.createElement("div");
+    snow.className = "snowflake";
+    snow.textContent = "❄";
+    snow.style.left = Math.random() * 100 + "vw";
+    snow.style.fontSize = (Math.random() * 10 + 10) + "px";
+    snow.style.animationDuration = (Math.random() * 10 + 10) + "s";
+    snow.style.opacity = Math.random();
+    document.body.appendChild(snow);
+}
+</script>
 
 <div class="container">
 
@@ -105,29 +131,6 @@ button:hover {
 <div class="cipher">[4] 8-23-1-20-9-20</div>
 <div class="cipher">[5] ⌇⍜⋏⏁⟟⋏⎍⟒</div>
 <div class="cipher">[6] ⠓⠁⠧⠑⠀⠽⠕⠥⠀⠞⠗⠊⠑⠙⠀⠞⠓⠊⠎⠦</div>
-    <div class="cipher">
-[?] 01001110 01101111 01110100 00100000 01100101 01101110 01101111 01110101 01100111 01101000
-</div>
-
-<div class="cipher">
-[?] NOT ENOUGH DATA
-</div>
-
-<div class="cipher">
-[?] Повторение не приводит к результату.
-</div>
-
-<div class="cipher">
-[?] Все шесть элементов не складываются в ответ.
-</div>
-
-<div class="cipher">
-[?] Возможно, порядок имеет значение.
-</div>
-
-<div class="cipher">
-[?] Возможно, нет.
-</div>
 
 <div class="input-block">
     <div>Введите ответ:</div>
@@ -137,26 +140,20 @@ button:hover {
 </div>
 
 <div class="gap"></div>
-<div class="scroll-text">Хочешь подсказку?</div>
+<div class="scroll-text">Здесь больше, чем кажется.</div>
 
 <div class="gap"></div>
-<div class="scroll-text">Всё, что нужно, уже на экране.</div>
+<div class="scroll-text">Иногда поиск — это ловушка.</div>
 
 <div class="gap"></div>
-<div class="scroll-text">А ты всё ещё ищешь ответ.</div>
+<div class="scroll-text">Ответ не всегда нужно находить.</div>
 
 <div class="gap"></div>
-<div class="scroll-text">Так можно долго.</div>
-
-<div class="gap"></div>
-<div class="scroll-text">И смысла в этом всё меньше.</div>
-
-<div class="gap"></div>
-<div class="scroll-text">Тут нет решения.</div>
+<div class="scroll-text">Иногда — его нужно прекратить.</div>
 
 <div class="final">
     <div>…</div>
-    <div style="margin-top:26px;">Стоп.</div>
+    <div style="margin-top:20px;">Стоп.</div>
     <div>Хватит крутить.</div>
 
     <div class="input-block">
@@ -173,10 +170,10 @@ button:hover {
 function fakeCheck() {
     const msgs = [
         "Недостаточно данных.",
-        "Ответ неполный.",
-        "Продолжай.",
-        "Ты близко.",
-        "Проверь ещё раз."
+        "Ты смотришь не туда.",
+        "Ответ ускользает.",
+        "Продолжай искать.",
+        "Кажется, почти."
     ];
     document.getElementById("fakeMsg").innerText =
         msgs[Math.floor(Math.random() * msgs.length)];
@@ -204,22 +201,20 @@ function realCheck() {
             font-family:monospace;
             text-align:center;
             margin-top:35vh;
-            font-size:22px;
         ">
             <div>Ты остановился.</div>
-            <div style="margin-top:26px;">
+            <div style="margin-top:20px;">
                 И это был правильный ход.
             </div>
 
             <a href="https://USERNAME.github.io/STAGE5-REPO/" style="
                 display:inline-block;
-                margin-top:60px;
-                padding:16px 32px;
+                margin-top:50px;
+                padding:14px 28px;
                 border:1px solid white;
                 color:white;
                 text-decoration:none;
-                letter-spacing:2px;
-                font-size:18px;
+                letter-spacing:3px;
             ">
                 ПЕРЕЙТИ К ФИНАЛУ
             </a>
